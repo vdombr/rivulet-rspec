@@ -21,4 +21,11 @@ jobs:
           bundler-cache: true
           rubygems: latest
 
+      - name: Configure RubyGems credentials
+        uses: rubygems/configure-rubygems-credentials@v2
+        with:
+          owner: "247615"
+
       - uses: rubygems/release-gem@v1.4.1
+        with:
+          setup-trusted-publisher: false
